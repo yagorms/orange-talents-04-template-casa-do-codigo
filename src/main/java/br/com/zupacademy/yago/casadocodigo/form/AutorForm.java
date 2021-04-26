@@ -28,6 +28,11 @@ public class AutorForm {
     }
 
     public Autor converter(AutorRepository autorRepository) {
+
         return new Autor(nome, email, descricao);
+    }
+
+    public String getEmail() {
+        return this.email;
     }
 }
