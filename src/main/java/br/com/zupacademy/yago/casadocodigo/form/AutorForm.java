@@ -2,6 +2,7 @@ package br.com.zupacademy.yago.casadocodigo.form;
 
 import br.com.zupacademy.yago.casadocodigo.orm.Autor;
 import br.com.zupacademy.yago.casadocodigo.repository.AutorRepository;
+import br.com.zupacademy.yago.casadocodigo.validator.UniqueValue;
 import org.hibernate.validator.constraints.Length;
 
 import javax.validation.constraints.Email;
@@ -13,6 +14,7 @@ public class AutorForm {
     private String nome;
     @NotBlank
     @Email
+    @UniqueValue(domainClass = Autor.class,fieldName = "email")
     private String email;
     @NotBlank
     @Length(max = 400)

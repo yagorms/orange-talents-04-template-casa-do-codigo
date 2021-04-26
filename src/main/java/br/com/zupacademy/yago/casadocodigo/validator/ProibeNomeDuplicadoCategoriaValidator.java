@@ -1,3 +1,4 @@
+/*
 package br.com.zupacademy.yago.casadocodigo.validator;
 
 import br.com.zupacademy.yago.casadocodigo.form.CategoriaForm;
@@ -36,3 +37,4 @@ public class ProibeNomeDuplicadoCategoriaValidator implements Validator {
 
     }
 }
+*/

@@ -2,12 +2,14 @@ package br.com.zupacademy.yago.casadocodigo.form;
 
 import br.com.zupacademy.yago.casadocodigo.orm.Categoria;
 import br.com.zupacademy.yago.casadocodigo.repository.CategoriaRepository;
+import br.com.zupacademy.yago.casadocodigo.validator.UniqueValue;
 
 import javax.validation.constraints.NotBlank;
 
 public class CategoriaForm {
 
     @NotBlank
+    @UniqueValue(domainClass = Categoria.class, fieldName = "nome")
     private String nome;
 
     @Deprecated
