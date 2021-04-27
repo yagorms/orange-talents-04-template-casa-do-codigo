@@ -1,12 +1,9 @@
 package br.com.zupacademy.yago.casadocodigo.orm;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 @Entity
 public class Livro {
@@ -37,6 +34,10 @@ public class Livro {
     @ManyToOne
     private Autor autor;
 
+    @Deprecated
+    public Livro(){
+
+    }
 
     public Livro(@NotBlank String titulo, @NotBlank @Size(max = 500) String resumo,
                  @NotBlank String sumario, @NotNull @Min(20) BigDecimal preco, @NotNull @Min(100) int numeroPaginas,
@@ -51,6 +52,47 @@ public class Livro {
         this.categoria = categoria;
         this.autor = autor;
     }
+
+    public Long getId() {
+        return id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public String getResumo() {
+        return resumo;
+    }
+
+    public String getSumario() {
+        return sumario;
+    }
+
+    public BigDecimal getPreco() {
+        return preco;
+    }
+
+    public int getNumeroPaginas() {
+        return numeroPaginas;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public LocalDate getDataPublicacao() {
+        return dataPublicacao;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public Autor getAutor() {
+        return autor;
+    }
+
 
     @Override
     public String toString() {
