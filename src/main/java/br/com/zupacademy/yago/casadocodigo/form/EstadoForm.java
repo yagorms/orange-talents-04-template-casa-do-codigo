@@ -28,6 +28,8 @@ public class EstadoForm {
         return idPais;
     }
 
+
+
     public EstadoForm(@NotBlank String nome, @NotNull Long idPais) {
         this.nome = nome;
         this.idPais = idPais;
